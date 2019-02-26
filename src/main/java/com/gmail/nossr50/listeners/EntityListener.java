@@ -783,7 +783,6 @@ public class EntityListener implements Listener {
             case TROPICAL_FISH:
             case COOKED_COD:
             case COOKED_SALMON:
-
                 if (Permissions.isSubSkillEnabled(player, SubSkillType.FISHING_FISHERMANS_DIET)) {
                     event.setFoodLevel(UserManager.getPlayer(player).getFishingManager().handleFishermanDiet(newFoodLevel));
                 }
