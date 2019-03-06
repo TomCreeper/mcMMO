@@ -1,5 +1,6 @@
 package com.gmail.nossr50.skills.smelting;
 
+import com.gmail.nossr50.config.AdvancedConfig;
 import com.gmail.nossr50.config.MainConfig;
 import com.gmail.nossr50.datatypes.experience.XPGainReason;
 import com.gmail.nossr50.datatypes.experience.XPGainSource;
