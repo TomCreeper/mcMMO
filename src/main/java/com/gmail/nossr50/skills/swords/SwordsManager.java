@@ -1,5 +1,6 @@
 package com.gmail.nossr50.skills.swords;
 
+import com.gmail.nossr50.config.AdvancedConfig;
 import com.gmail.nossr50.datatypes.interactions.NotificationType;
 import com.gmail.nossr50.datatypes.player.McMMOPlayer;
 import com.gmail.nossr50.datatypes.skills.PrimarySkillType;
@@ -78,8 +79,8 @@ public class SwordsManager extends SkillManager {
     {
         int bleedTicks = 2 * RankUtils.getRank(getPlayer(), SubSkillType.SWORDS_RUPTURE);
 
-        if(bleedTicks > Swords.bleedMaxTicks)
-            bleedTicks = Swords.bleedMaxTicks;
+        if(bleedTicks > AdvancedConfig.getInstance().getRuptureMaxTicks())
+            bleedTicks = AdvancedConfig.getInstance().getRuptureMaxTicks();
 
         return bleedTicks;
     }
@@ -92,7 +93,7 @@ public class SwordsManager extends SkillManager {
      */
     public void counterAttackChecks(LivingEntity attacker, double damage) {
         if (RandomChanceUtil.isActivationSuccessful(SkillActivationType.RANDOM_LINEAR_100_SCALE_WITH_CAP, SubSkillType.SWORDS_COUNTER_ATTACK, getPlayer())) {
-            CombatUtils.dealDamage(attacker, damage / Swords.counterAttackModifier, getPlayer());
+            CombatUtils.dealDamage(attacker, damage / AdvancedConfig.getInstance().getCounterAttackModifier(), getPlayer());
 
             NotificationManager.sendPlayerInformation(getPlayer(), NotificationType.SUBSKILL_MESSAGE, "Swords.Combat.Countered");
 
@@ -109,7 +110,7 @@ public class SwordsManager extends SkillManager {
      * @param damage The amount of damage initially dealt by the event
      */
     public void serratedStrikes(LivingEntity target, double damage, Map<DamageModifier, Double> modifiers) {
-        CombatUtils.applyAbilityAoE(getPlayer(), target, damage / Swords.serratedStrikesModifier, modifiers, skill);
+        CombatUtils.applyAbilityAoE(getPlayer(), target, damage / AdvancedConfig.getInstance().getSerratedStrikesModifier(), modifiers, skill);
         BleedTimerTask.add(target, getPlayer(), getRuptureBleedTicks(), RankUtils.getRank(getPlayer(), SubSkillType.SWORDS_RUPTURE));
     }
 }
