@@ -263,7 +263,7 @@ public class RepairManager extends SkillManager {
         Player player = getPlayer();
 
         if (Permissions.isSubSkillEnabled(player, SubSkillType.REPAIR_REPAIR_MASTERY) && RankUtils.hasUnlockedSubskill(getPlayer(), SubSkillType.REPAIR_REPAIR_MASTERY)) {
-            double bonus = repairAmount * Math.min((((AdvancedConfig.getInstance().getRepairMasteryMaxBonus() / AdvancedConfig.getInstance().getMaxBonusLevel(SubSkillType.REPAIR_REPAIR_MASTERY)) * getSkillLevel()) / 100.0D), Repair.repairMasteryMaxBonus / 100.0D);
+            double bonus = repairAmount * Math.min((((AdvancedConfig.getInstance().getRepairMasteryMaxBonus() / AdvancedConfig.getInstance().getMaxBonusLevel(SubSkillType.REPAIR_REPAIR_MASTERY)) * getSkillLevel()) / 100.0D), AdvancedConfig.getInstance().getRepairMasteryMaxBonus() / 100.0D);
             repairAmount += bonus;
         }
 
