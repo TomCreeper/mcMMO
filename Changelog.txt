@@ -18,7 +18,9 @@ Version 2.2.0
     Fixed a bug where players who started at level 1 would not be purged from the DB for being "powerless"
 
     Settings related to Player Leveling are now found in "player_leveling.conf"
+    Player Leveling's "TruncateSkills" renamed -> "Reduce_Player_Skills_Above_Cap"
     Player Leveling's "StartingLevel" renamed -> "Player_Starting_Level"
+    Added new toggles for enabling level caps (previously this was done by setting the value above 0)
 
     Scoreboard settings can now be found in "scoreboard.conf"
     Scoreboard's "Allow_Keep" setting was removed because it was doing something permissions should be doing instead, and I don't see why such a thing even needs a permission!
@@ -34,6 +36,8 @@ Version 2.2.0
     MySQL and FlatFile Settings can now be found in "database_settings.conf"
     Added new config toggle for purging power-less users
     Added new config toggle for purging inactive users
+    Database Purging's "Purge_Interval" renamed -> "Purge_Interval_In_Hours"
+    Database Purging's "Old_User_Cutoff" renamed -> "Old_User_Cutoff_In_Months"
     Added setting for only purging users on plugin start up
     MySQL User settings are now in the User Category instead of being in the Database category
     MySQL's "Enabled" renamed -> "Use_MySQL"
@@ -58,6 +62,8 @@ Version 2.2.0
     removed child.yml, child skills now have hard coded parents
     removed the hardcore and vampirism commands, these are dangerous settings and should not be toggle-able (turn them on in your configs if you want to use them)
 
+    Added API method to grab the level cap of a skill by its PrimarySkillType ENUM definition
+    Added API method to check if a skill was being level capped
 
 Version 2.1.18
     You will need to add Kelp to your experience.yml file for this fix to be fully functional
