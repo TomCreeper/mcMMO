@@ -7,20 +7,7 @@ Key:
   ! Change
   - Removal
 
-Version 2.1.18
-    You will need to add Kelp to your experience.yml file for this fix to be fully functional
-    Breaking Kelp will now properly count its XP
-    Added "Kelp" to experience.yml (Kelp is actually made up of two blocks mixed together)
-    It is recommended that Kelp and Kelp_Plant have the same XP value in experience.yml
-    mcMMO will now calculate XP for plants that are taller than naturally allowed (Cactus above 3 block height, etc)
-
-Version 2.1.17
-    Fixed a logic error that resulted in Drowned giving no XP
-    Fixed a bug that resulted in mob spawner entities to not be marked for no xp after being transforming into Drowned
-
-Version 2.1.16
-    Breaking Kelp should now count the whole plant for XP
-    Spawned Mobs that are not supposed to award XP will no longer reward XP once transformed (ie: drowned)
+Version 2.2.0
     mcMMO's config system has been rewritten
     Many config files are now generated on demand instead of being copied from within the JAR
     All config nodes that used to be styled with CamelCase now use underscores (_) as spaces for readability and consistency
@@ -70,6 +57,22 @@ Version 2.1.16
     Giga Drill Breaker will now break "diggable" blocks even if they have no configured treasures
     removed child.yml, child skills now have hard coded parents
     removed the hardcore and vampirism commands, these are dangerous settings and should not be toggle-able (turn them on in your configs if you want to use them)
+
+
+Version 2.1.18
+    You will need to add Kelp to your experience.yml file for this fix to be fully functional
+    Breaking Kelp will now properly count its XP
+    Added "Kelp" to experience.yml (Kelp is actually made up of two blocks mixed together)
+    It is recommended that Kelp and Kelp_Plant have the same XP value in experience.yml
+    mcMMO will now calculate XP for plants that are taller than naturally allowed (Cactus above 3 block height, etc)
+
+Version 2.1.17
+    Fixed a logic error that resulted in Drowned giving no XP
+    Fixed a bug that resulted in mob spawner entities to not be marked for no xp after being transforming into Drowned
+
+Version 2.1.16
+    Breaking Kelp should now count the whole plant for XP
+    Spawned Mobs that are not supposed to award XP will no longer reward XP once transformed (ie: drowned)
 
 Version 2.1.15
     Fixed a bug where a max rank of Fuel Efficiency would cause its benefits to be lost
