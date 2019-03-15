@@ -222,11 +222,6 @@ public class ExperienceConfig extends ConfigValidated {
      * FORMULA SETTINGS
      */
 
-    /* EXPLOIT TOGGLES */
-    public boolean isEndermanEndermiteFarmingPrevented() {
-        return getBooleanValue(EXPLOIT_FIX, ENDERMAN_ENDERMITE_FARMS);
-    }
-
     /* Curve settings */
     public FormulaType getFormulaType() {
         return FormulaType.getFormulaType(getStringValue(EXPERIENCE_FORMULA, CURVE));
