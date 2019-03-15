@@ -15,6 +15,7 @@ import com.gmail.nossr50.datatypes.treasure.Rarity;
 import com.gmail.nossr50.datatypes.treasure.ShakeTreasure;
 import com.gmail.nossr50.events.skills.fishing.McMMOPlayerFishingTreasureEvent;
 import com.gmail.nossr50.events.skills.fishing.McMMOPlayerShakeEvent;
+import com.gmail.nossr50.mcMMO;
 import com.gmail.nossr50.skills.SkillManager;
 import com.gmail.nossr50.util.*;
 import com.gmail.nossr50.util.player.NotificationManager;
@@ -58,6 +59,8 @@ public class FishingManager extends SkillManager {
     }
 
     public boolean exploitPrevention(BoundingBox boundingBox) {
+        if(!mcMMO.getConfigManager().getConfigExploitPrevention().getConfigSectionExploitFishing().isPreventFishingExploits())
+            return false;
 
         Block targetBlock = getPlayer().getTargetBlock(BlockUtils.getTransparentBlocks(), 100);
 
