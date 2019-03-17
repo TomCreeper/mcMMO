@@ -150,7 +150,7 @@ public class mcMMO extends JavaPlugin {
 
             placeStore = ChunkManagerFactory.getChunkManager(); // Get our ChunkletManager
 
-            if (MainConfig.getInstance().getPTPCommandWorldPermissions()) {
+            if (mcMMO.getConfigManager().getConfigParty().getPTP().isPtpWorldBasedPermissions()) {
                 Permissions.generateWorldTeleportPermissions();
             }
 
